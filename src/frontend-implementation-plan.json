@@ -1,0 +1,67 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Improve music playback reliability and update NO-click prompt escalation (English) while keeping NO always available",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Make background music reliably audible with clear autoplay-blocked guidance, working play/pause, and volume that affects the active audio.",
+      "acceptanceCriteria": [
+        "If browser autoplay is blocked on initial load, an on-screen prompt appears telling the user to click/tap Play to start music.",
+        "Clicking the Play control starts audible playback (not muted) using the configured audio source (licensed track if present; otherwise the fallback romantic instrumental).",
+        "The volume slider changes the audible volume while music is playing.",
+        "Play/Pause control remains visible and correctly reflects the playing state."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/MusicPlayer.tsx",
+          "operation": "modify",
+          "description": "Harden audio playback flow so music becomes audibly audible after a user click: ensure the created audio element is not left effectively muted (initial volume handling + play after gesture), make the volume slider always control the currently playing audio (including during fade-in/out), and provide clear English UI text indicating when autoplay is blocked and that the user should click/tap Play to start music. Use existing shadcn-ui components already imported (Button/Slider/Alert/Popover) to keep controls visible and state-reflective. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Replace the NO-click escalation prompts with the provided sequence (English) displayed as a prominent flashing/pulsing message (not as the NO button label).",
+      "acceptanceCriteria": [
+        "After each NO click, the UI shows the next prompt message in a prominent animated (flashing/pulsing) style near/above the buttons.",
+        "The prompt messages are displayed in English equivalents for the provided Hinglish/Hindi phrases.",
+        "The prompt sequence includes (in order): \"Are you sure?\", \"Are you 1000% sure?\", \"I will always treat you like a princess\", \"I will handle all your tantrums\", \"I will take you on lots of shopping trips\", \"Pretty please?\", \"Say yes, cutie\", \"Come on, say yes now\", \"Just give me one chance\".",
+        "When the sequence is exhausted, the app continues showing a reasonable final English prompt message on subsequent NO clicks."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProposalSection.tsx",
+          "operation": "modify",
+          "description": "Update the internal NO prompt list to exactly match the required English sequence, show the message above/near the buttons (not on the NO button), and keep it visually prominent with a flashing/pulsing animation. Ensure subsequent NO clicks after the list is exhausted continue showing a reasonable final English prompt message. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add a small utility animation (e.g., a stronger flash/pulse keyframe and class) that ProposalSection can apply to the NO prompt message to meet the prominent flashing/pulsing requirement while keeping styling within existing global styling entry points. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Keep growing the YES button on each NO click while ensuring NO is always visible and clickable, and NO responses are still submitted.",
+      "acceptanceCriteria": [
+        "On each NO click, the YES button grows compared to its previous size.",
+        "The NO button remains visible and clickable for the entire interaction (no forced YES-only state).",
+        "The app still records/submits NO responses when NO is clicked."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProposalSection.tsx",
+          "operation": "modify",
+          "description": "Ensure YES continues to scale up on each NO click, and adjust NO scaling/interaction rules so it never becomes effectively unusable (set a safe minimum scale and do not disable/hide it). Keep NO click handler always callable so the app can continue submitting NO responses. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update how ProposalSection is wired so NO is never disabled by parent UI state (e.g., during the sad animation), while still allowing any optional temporary gating to apply only to YES if needed. Maintain existing NO submission behavior via useSubmitResponse when NO is clicked. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "frontend/src/App.tsx": "Main application component managing the Valentine's proposal flow with routing, handling YES/NO responses with backend submission, animations, and ensuring NO button is never disabled by parent state.",
+  "frontend/src/components/ProposalSection.tsx": "Valentine's proposal component displaying the question to Aditi with YES button that grows on each NO click, NO button that remains visible and clickable (minimum scale 0.6), and prominent flashing English prompts after each NO click including \"Are you sure?\", \"I will always treat you like a princess\", \"I will handle all your tantrums\", \"I will take you on lots of shopping trips\", etc.",
+  "frontend/src/components/FloatingHearts.tsx": "Renders animated floating hearts that rise from bottom to top when user clicks \"Yes\".",
+  "frontend/src/components/SadHeartAnimation.tsx": "Shows a bouncing sad heart animation when user clicks \"No\".",
+  "frontend/src/components/PhotoCarousel.tsx": "Image carousel component displaying romantic photos with sweet captions using shadcn carousel.",
+  "frontend/src/components/MusicPlayer.tsx": "Enhanced music player with reliable audio playback, proper volume control that affects the active audio element, clear autoplay-blocked prompts, and visible play/pause controls that correctly reflect playing state.",
+  "frontend/src/components/Footer.tsx": "Footer component with attribution and animated heart icon linking to caffeine.ai, updated with correct 2026 copyright year.",
+  "frontend/src/index.css": "Global styles with romantic Valentine-themed OKLCH color system, floating heart animations, sad heart bounce animation, and new flash-pulse animation for prominent NO-click prompt messages.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for submitting responses to backend, fetching all responses, and checking admin status with proper error handling and cache invalidation.",
+  "frontend/src/screens/ResultsScreen.tsx": "Owner-only results screen displaying all submitted responses with timestamps, access control via admin check, and formatted display of YES/NO answers with appropriate styling."
+}

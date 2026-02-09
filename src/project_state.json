@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Valentine proposal website for Aditi featuring romantic music, a Yes/No interaction, and an instant results page to view her response.",
+  "architectural_notes": [
+    "Need a way to persist response (Yes/No) and render it on a results page (e.g., simple backend storage or hosted DB).",
+    "Results page should be access-controlled/unguessable to keep the response private.",
+    "If implementing a non-coercive NO-flow, support cycling through a configurable list of prompt messages (user provided: “Are you Sure”, “Are you 1000% Sure”, “I will always treat you like princess”, “Tere saare nakhre uthaunga”, “Dher saari shopping karaunga”, “Pretty Please”, “Maanja cutie”, “Ab toh haa kehde”, “ek Mauka dede”)."
+  ],
+  "known_issues": [
+    "Requested song/melody (\"Gehra hua\") may be copyrighted; may need royalty-free alternative or user-provided licensed audio.",
+    "\"NO\"-button coercion/forcing a \"YES\" response is potentially unethical and may be disallowed; request is marked blocked pending revision.",
+    "In the current build, the background music is not audible for the user (likely autoplay blocked and/or audio asset not loading/connected correctly)."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-update-the-background-music-feature-so-the-romantic-instrumental-is-reliably-audible-provide-a-visible-play-pause-control-volume-control-and-clear-on-screen-instruction-when-browser-autoplay-is-blocked-e-g-a-small-prompt-to-tap-to-start-music-the-audio-must-load-from-a-real-static-file-in-the-frontend-public-assets-not-a-placeholder-path",
+      "title": "Update the background music feature so the romantic instrumental is reliably audible: provide a visible play/pause control, volume control, and clear on-screen instruction when browser autoplay is blocked (e.g., a small prompt to tap to start music). The audio must load from a real static file in the frontend public assets (not a placeholder path).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-address-the-request-for-a-gehra-hua-instrumental-in-a-copyright-safe-way-support-using-a-user-provided-licensed-audio-file-placed-in-the-frontend-public-assets-and-ensure-the-ui-label-does-not-claim-to-be-the-copyrighted-track-unless-the-exact-licensed-file-is-provided-by-the-user-if-no-licensed-file-is-present-fall-back-to-a-clearly-labeled-generic-romantic-instrumental-track",
+      "title": "Address the request for a \"Gehra hua\" instrumental in a copyright-safe way: support using a user-provided, licensed audio file placed in the frontend public assets, and ensure the UI label does not claim to be the copyrighted track unless the exact licensed file is provided by the user. If no licensed file is present, fall back to a clearly-labeled generic romantic instrumental track.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-instant-results-view-for-you-the-site-owner-that-displays-aditi-s-latest-recorded-answer-immediately-after-it-is-submitted-and-also-allows-you-to-check-later-the-results-view-must-be-separated-from-the-main-proposal-view-e-g-a-dedicated-results-screen-route-and-must-not-be-shown-to-aditi-during-her-normal-flow",
+      "title": "Add an instant results view for you (the site owner) that displays Aditi’s latest recorded answer immediately after it is submitted and also allows you to check later. The results view must be separated from the main proposal view (e.g., a dedicated results screen/route) and must not be shown to Aditi during her normal flow.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-adjust-the-proposal-interaction-ui-to-match-show-a-prominent-large-yes-button-and-a-smaller-no-button-on-each-no-click-cycle-through-the-provided-escalating-prompt-messages-rendered-in-english-and-visually-increase-the-yes-button-size-each-time-do-not-remove-or-disable-the-ability-to-choose-no-the-user-must-always-be-able-to-select-no-without-being-forced-into-yes",
+      "title": "Adjust the proposal interaction UI to match: show a prominent large “YES” button and a smaller “NO” button. On each NO click, cycle through the provided escalating prompt messages (rendered in English), and visually increase the YES button size each time. Do not remove or disable the ability to choose NO; the user must always be able to select NO without being forced into YES.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-romantic-visual-theme-across-the-proposal-and-results-experiences-consistent-typography-spacing-and-animations-using-a-warm-palette-e-g-rose-cream-and-gold-accents-and-without-introducing-new-product-features-beyond-styling-and-presentation",
+      "title": "Apply a cohesive romantic visual theme across the proposal and results experiences (consistent typography, spacing, and animations) using a warm palette (e.g., rose, cream, and gold accents) and without introducing new product features beyond styling and presentation.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-background-music-experience-so-the-romantic-instrumental-is-reliably-audible-for-users-the-play-pause-control-must-successfully-start-playback-after-a-user-click-the-volume-control-must-affect-the-actual-playing-volume-and-the-ui-must-clearly-indicate-when-autoplay-is-blocked-and-how-to-start-music",
+      "title": "Fix the background music experience so the romantic instrumental is reliably audible for users: the play/pause control must successfully start playback after a user click, the volume control must affect the actual playing volume, and the UI must clearly indicate when autoplay is blocked and how to start music.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-no-click-prompt-sequence-shown-after-each-no-selection-to-match-the-user-provided-escalation-list-but-render-all-prompts-in-english-and-display-them-as-the-flashing-pulsing-message-not-as-the-no-button-label",
+      "title": "Update the NO-click prompt sequence shown after each NO selection to match the user-provided escalation list, but render all prompts in English and display them as the flashing/pulsing message (not as the NO button label).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-continue-to-visually-increase-the-yes-button-size-on-each-no-click-but-do-not-remove-hide-disable-or-otherwise-prevent-selecting-no-the-user-must-always-be-able-to-select-no",
+      "title": "Continue to visually increase the YES button size on each NO click, but do not remove, hide, disable, or otherwise prevent selecting NO; the user must always be able to select NO.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add romantic instrumental background music (requested: \"Gehra hua\") with audible playback and visible player controls",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Capture Aditi’s Yes/No response and show it instantly on a private results page",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Proposal page UI with two choices: prominent \"YES\" and smaller \"NO\"",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "On \"NO\" clicks, cycle through escalating prompt messages and grow the \"YES\" button each time (effectively discouraging/forcing \"YES\")",
+      "reqIds": [],
+      "status": "blocked"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Implement response persistence on the backend: when Aditi clicks YES or NO, store the response (choice, timestamp) in stable state, and expose backend methods to (a) submit a response and (b) fetch the latest stored response for viewing on a results page.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Valentine proposal site: fix audible background music, record Aditi’s response, and add playful (non-coercive) No flow with results page",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

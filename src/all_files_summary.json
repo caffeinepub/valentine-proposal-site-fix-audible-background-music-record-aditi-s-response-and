@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Motoko canister managing user profiles and boolean responses with strict access control for users and admins.",
+  "feature_evidence.json": "Feature mapping file linking implemented features to affected frontend files, components, and test IDs.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing the purpose of each frontend component in the Valentine's app.",
+  "frontend/index.css": "Tailwind-based global styling defining Valentine‑themed OKLCH colors, dark mode values, and base utility application.",
+  "frontend/index.html": "Basic HTML entry point loading the React main.tsx bundle into the root element.",
+  "frontend/src/App.tsx": "Main React app handling YES/NO interactions, routing to results, animations, and background/music integration.",
+  "frontend/src/components/FloatingHearts.tsx": "Generates randomized floating heart particles that animate upward during YES celebrations.",
+  "frontend/src/components/Footer.tsx": "Displays a themed footer with ©2026 text, a pulsing heart icon, and a link to caffeine.ai.",
+  "frontend/src/components/MusicPlayer.tsx": "Robust audio player with autoplay detection, play/pause control, volume handling, and fallback track logic.",
+  "frontend/src/components/PhotoCarousel.tsx": "Carousel showing three romantic photos with captions using shadcn carousel components.",
+  "frontend/src/components/ProposalSection.tsx": "Interactive Valentine proposal UI with growing Yes button, shrinking No button, and rotating prompts on No clicks.",
+  "frontend/src/components/SadHeartAnimation.tsx": "Displays a centered bouncing sad-heart image overlay for emotional feedback.",
+  "frontend/src/hooks/useActor.ts": "Creates and manages a backend actor based on Internet Identity, refreshing dependent queries on identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides Internet Identity auth context, including login, logout, and stored identity restoration.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for submitting responses, fetching all responses, and checking admin status via the backend actor.",
+  "frontend/src/index.css": "Tailwind config plus custom animations and theme variables for hearts, flashing prompts, and dark mode.",
+  "frontend/src/main.tsx": "Initializes React app with QueryClient and InternetIdentityProvider before rendering App.",
+  "frontend/src/screens/ResultsScreen.tsx": "Admin-only results view showing stored responses with loading, access control, and formatted UI states.",
+  "frontend/src/utils/urlParams.ts": "Helpers for reading URL parameters (including hash routing) and persisting them in sessionStorage, plus utilities to clear parameters from session state or the URL hash.",
+  "frontend/tailwind.config.js": "Tailwind configuration defining theme extensions, custom colors, animations, and enabling typography, container queries, and animation plugins.",
+  "project_state.json": "Project metadata describing the Valentine proposal site, its architecture notes, issues, and a list of existing feature tasks with versioned requirements."
+}

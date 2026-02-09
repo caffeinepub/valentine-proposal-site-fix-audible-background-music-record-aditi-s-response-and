@@ -1,0 +1,67 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-fix-the-background-music-experience-so-the-romantic-instrumental-is-reliably-audible-for-users-the-play-pause-control-must-successfully-start-playback-after-a-user-click-the-volume-control-must-affect-the-actual-playing-volume-and-the-ui-must-clearly-indicate-when-autoplay-is-blocked-and-how-to-start-music",
+      "featureTitle": "Fix the background music experience so the romantic instrumental is reliably audible for users: the play/pause control must successfully start playback after a user click, the volume control must affect the actual playing volume, and the UI must clearly indicate when autoplay is blocked and how to start music.",
+      "files": [
+        "frontend/src/components/MusicPlayer.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-no-click-prompt-sequence-shown-after-each-no-selection-to-match-the-user-provided-escalation-list-but-render-all-prompts-in-english-and-display-them-as-the-flashing-pulsing-message-not-as-the-no-button-label",
+      "featureTitle": "Update the NO-click prompt sequence shown after each NO selection to match the user-provided escalation list, but render all prompts in English and display them as the flashing/pulsing message (not as the NO button label).",
+      "files": [
+        "frontend/src/components/ProposalSection.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-continue-to-visually-increase-the-yes-button-size-on-each-no-click-but-do-not-remove-hide-disable-or-otherwise-prevent-selecting-no-the-user-must-always-be-able-to-select-no",
+      "featureTitle": "Continue to visually increase the YES button size on each NO click, but do not remove, hide, disable, or otherwise prevent selecting NO; the user must always be able to select NO.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProposalSection.tsx"
+      ],
+      "components": [
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
